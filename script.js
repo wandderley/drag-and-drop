@@ -15,16 +15,20 @@ const dragOver = (event) => {
     event.preventDefault();
 };
 
+const dragEnter = ({target}) => {
+    if(target.classList.contains("column_cards")){
+        target.classList.add("column_highlight")
+    }
+};
 
 
-
+// Evento de capura para as colunas
+columns.forEach((column) => {
+    column.addEventListener("dragover", dragOver)
+    column.addEventListener("dragenter", dragEnter )
+})
 
 // Evento de capura para os cards
 cards.forEach((card) => {
     card.addEventListener("dragstart", dragStart);
 });
-
-// Evento de capura para as colunas
-columns.forEach((column) => {
-    column.addEventListener("dragover", dragOver)
-})
