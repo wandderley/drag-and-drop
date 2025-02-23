@@ -25,12 +25,19 @@ const dragLeave = ({target}) => {
     target.classList.remove("column_highlight")    
 };
 
+// Função drop
+const drop = ({target}) => {
+    target.append(draggedCard)
+    target.classList.remove("column_highlight")    
+};
+
 
 // Evento de capura para as colunas
 columns.forEach((column) => {
-    column.addEventListener("dragover", dragOver)
-    column.addEventListener("dragenter", dragEnter )
-    column.addEventListener("dragleave", dragLeave )
+    column.addEventListener("dragover", dragOver) // Está sobre
+    column.addEventListener("dragenter", dragEnter ) // Entra
+    column.addEventListener("dragleave", dragLeave ) // Arrasta pra fora
+    column.addEventListener("drop", drop ) // Arrasta pra fora
 })
 
 // Evento de capura para os cards
