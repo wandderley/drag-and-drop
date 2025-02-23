@@ -21,11 +21,16 @@ const dragEnter = ({target}) => {
     }
 };
 
+const dragLeave = ({target}) => {
+    target.classList.remove("column_highlight")    
+};
+
 
 // Evento de capura para as colunas
 columns.forEach((column) => {
     column.addEventListener("dragover", dragOver)
     column.addEventListener("dragenter", dragEnter )
+    column.addEventListener("dragleave", dragLeave )
 })
 
 // Evento de capura para os cards
