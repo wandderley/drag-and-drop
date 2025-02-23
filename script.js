@@ -27,8 +27,10 @@ const dragLeave = ({target}) => {
 
 // Função drop
 const drop = ({target}) => {
-    target.append(draggedCard)
-    target.classList.remove("column_highlight")    
+    if(target.classList.contains("column_cards")){
+        target.classList.remove("column_highlight")
+        target.append(draggedCard)
+    }
 };
 
 
