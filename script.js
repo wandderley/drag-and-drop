@@ -1,5 +1,4 @@
 const columns = document.querySelectorAll(".column_cards");
-const cards = document.querySelectorAll(".card");
 
 let draggedCard = null;
 
@@ -66,8 +65,3 @@ columns.forEach((column) => {
     column.addEventListener("dblclick", createCard ); // adiciona novo card
 
 })
-
-// Evento de capura para os cards
-cards.forEach((card) => {
-    card.addEventListener("dragstart", dragStart);
-});
